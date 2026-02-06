@@ -11,9 +11,32 @@ const Calculator = () => {
         if (waitingForNewValue) {
             setDisplay(String(num));
             setWaitingForNewValue(false);
-    } else {
-        setDisplay(display === '0' ? String(num) : display + num);
-    }
-};
+        } else {
+            setDisplay(display === '0' ? String(num) : display + num);
+        }
+    };
 
-const inputDecimal
+    const inputDecimal = () => {
+        if (waitingForNewValue) {
+            setDisplay('0.');
+            setWaitingForNewValue(false);
+        } else if (display.indexOf('.') === -1) {
+            setDisplay(display + '.');
+        }
+    };
+
+    const clear = () => {
+        setDisplay('0');
+        setPreviousValue(null);
+        setOperation(null);
+        setWaitingForNewValue(false);
+    };
+
+    const performOperation = (nextOperator) => {
+        const inputValue = parseFloat(display);
+
+        if(previousValue === null) {
+            setPreviousValue(inputValue);
+        }
+    }
+}
