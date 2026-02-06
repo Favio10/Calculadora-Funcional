@@ -27,3 +27,83 @@
     align-items: center;
     justify-content: flex-end;
   }
+
+  .display-value {
+    color: #ffffff;
+    font-size: 3rem;
+    font-weight: 300;
+    word-wrap: break-word;
+    word-break: break-all;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+.button-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .button {
+    background: #2d2d2d;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 25px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .button:hover {
+    background: #3d3d3d;
+    transform: scale(0.95);
+  }
+  
+  .button:active {
+    transform: scale(0.9);
+  }
+  
+  .button.operator {
+    background: #ff9500;
+    color: #ffffff;
+  }
+  
+  .button.operator:hover {
+    background: #ffad33;
+  }
+  
+  .button.operator.equals {
+    background: #ff9500;
+    grid-row: span 2;
+  }
+  
+  .button.function {
+    background: #505050;
+    color: #ffffff;
+  }
+  
+  .button.function:hover {
+    background: #606060;
+  }
+  
+  .button.zero {
+    grid-column: span 2;
+  }
+  
+  @media (max-width: 480px) {
+    .calculator {
+      padding: 15px;
+    }
+    
+    .display-value {
+      font-size: 2rem;
+    }
+    
+    .button {
+      padding: 20px;
+      font-size: 1.2rem;
+    }
+  }
