@@ -7,7 +7,7 @@ function App() {
         <div className='App'>
             <Calculator />
         </div>
-    )
+    );
 }
 
 export default App;

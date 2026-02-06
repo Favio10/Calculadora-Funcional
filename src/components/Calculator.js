@@ -61,6 +61,8 @@ const Calculator = () => {
                 return secondValue !== 0 ? firstValue / secondValue : 0;
             case '=':
                 return secondValue;
+            default:
+                return secondValue;
         }
     };
 
@@ -72,7 +74,7 @@ const Calculator = () => {
             setDisplay(String(newValue));
             setPreviousValue(null);
             setOperation(null);
-            setWaitingForNewValue(false);
+            setWaitingForNewValue(true);
         }
     };
 
@@ -94,8 +96,8 @@ const Calculator = () => {
                 <div className='button-row'>
                     <button className="button function" onClick={clear}>AC</button>
                     <button className="button function" onClick={handleDelete}>⌫</button>
-                    <button className="button operator" onClick={() => performOperation('÷')}>÷</button>
-                    <button className="button operator" onClick={() => performOperation('×')}>×</button>
+                    <button className="button operator" onClick={() => performOperation('/')}>÷</button>
+                    <button className="button operator" onClick={() => performOperation('*')}>×</button>
                 </div>
 
                 <div className="button-row">
@@ -106,10 +108,17 @@ const Calculator = () => {
                 </div>
         
                 <div className="button-row">
+                    <button className="button" onClick={() => inputNumber(4)}>4</button>
+                    <button className="button" onClick={() => inputNumber(5)}>5</button>
+                    <button className="button" onClick={() => inputNumber(6)}>6</button>
+                    <button className="button operator" onClick={() => performOperation('+')}>+</button>
+                </div>
+        
+                <div className="button-row">
                     <button className="button" onClick={() => inputNumber(1)}>1</button>
                     <button className="button" onClick={() => inputNumber(2)}>2</button>
                     <button className="button" onClick={() => inputNumber(3)}>3</button>
-                    <button className="button operator equals" onClick={handleEquals} rowSpan="2">=</button>
+                    <button className="button operator equals" onClick={handleEquals}>=</button>
                 </div>
         
                 <div className="button-row">
